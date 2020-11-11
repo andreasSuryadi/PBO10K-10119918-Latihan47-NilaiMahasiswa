@@ -5,8 +5,6 @@
  */
 package pbo10k10119918latihan47nilaimahasiswa;
 
-import java.util.Scanner;
-
 /**
  *
  * @author
@@ -24,21 +22,45 @@ public class PBO10K10119918Latihan47NilaiMahasiswa {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
         Nilai nilai = new Nilai();
         
-        double quiz, uts, uas, nilaiAkhir;
+        double nilaiAkhir;
         
-        System.out.print("QUIZ \t\t = ");
-        quiz = scanner.nextDouble();
-        System.out.print("UTS \t\t = ");
-        uts = scanner.nextDouble();
-        System.out.print("UAS \t\t = ");
-        uas = scanner.nextDouble();
+        nilai.setNilaiQuiz(75.0);
+        nilai.setNilaiUts(45.0);
+        nilai.setNilaiUas(34.0);
         
-        nilai.setNilaiQuiz(quiz);
-        nilai.setNilaiUts(uts);
-        nilai.setNilaiUas(uas);
+        System.out.println("QUIZ \t\t = " + nilai.getNilaiQuiz());
+        System.out.println("UTS \t\t = " + nilai.getNilaiUts());
+        System.out.println("UAS \t\t = " + nilai.getNilaiUas());
+        
+        nilaiAkhir = nilai.hitungNilaiAkhir(nilai.getNilaiQuiz(), nilai.getNilaiUts(), nilai.getNilaiUas());
+        
+        System.out.printf("%nNilai Akhir \t = %.1f %n%n", nilaiAkhir);
+        System.out.println("Index = " + nilai.tampilIndex(nilaiAkhir));
+        System.out.println("Keterangan = " + nilai.tampilKeterangan(nilai.tampilIndex(nilaiAkhir)) + "\n\n");
+        
+        nilai.setNilaiQuiz(60.0);
+        nilai.setNilaiUts(80.0);
+        nilai.setNilaiUas(75.0);
+        
+        System.out.println("QUIZ \t\t = " + nilai.getNilaiQuiz());
+        System.out.println("UTS \t\t = " + nilai.getNilaiUts());
+        System.out.println("UAS \t\t = " + nilai.getNilaiUas());
+        
+        nilaiAkhir = nilai.hitungNilaiAkhir(nilai.getNilaiQuiz(), nilai.getNilaiUts(), nilai.getNilaiUas());
+        
+        System.out.printf("%nNilai Akhir \t = %.1f %n%n", nilaiAkhir);
+        System.out.println("Index = " + nilai.tampilIndex(nilaiAkhir));
+        System.out.println("Keterangan = " + nilai.tampilKeterangan(nilai.tampilIndex(nilaiAkhir)) + "\n\n");
+        
+        nilai.setNilaiQuiz(30.0);
+        nilai.setNilaiUts(80.0);
+        nilai.setNilaiUas(40.0);
+        
+        System.out.println("QUIZ \t\t = " + nilai.getNilaiQuiz());
+        System.out.println("UTS \t\t = " + nilai.getNilaiUts());
+        System.out.println("UAS \t\t = " + nilai.getNilaiUas());
         
         nilaiAkhir = nilai.hitungNilaiAkhir(nilai.getNilaiQuiz(), nilai.getNilaiUts(), nilai.getNilaiUas());
         
